@@ -20,6 +20,8 @@ static uint16_t AD1871_0_gain_hp_amc, AD1871_1_mute_fmt, AD1871_2_mux_mck;
 static uint16_t AD185x_conf;
 const uint16_t volumeLookUp[128];
 
+uint16_t AnalogADDASPItransfer(uint8_t chip, uint16_t data);
+
 uint16_t AnalogADDASPItransfer(uint8_t chip, uint16_t data)
 {
 	volatile uint16_t delay;
@@ -133,7 +135,6 @@ uint16_t AnalogADDAInit( void)
 	AD1871_0_gain_hp_amc = 0;
 	// High pass filter
 #ifdef AD1871_HPF
-	#warning HPF
 	AD1871_0_gain_hp_amc |= (1<<8);
 #endif
 	AnalogADDASPItransfer(GPIO_PIN_3, AD1871_0_gain_hp_amc);

@@ -2,13 +2,14 @@
 #define __SSIAUDIO_H__
 
 /*!
- * \file SSIAudio.h
  * \defgroup SSIAudio SSIAudio
+ * @{
  * \brief	This Module contain procedures for utilizing SSI peripherals as I2S (left-justified) slave audio device only with one external XOR gate.
- * \autor 	Lukas Otava
+ * \author 	Lukas Otava
  * \date 	2014
  *
  * \warning This module is time critical, optimalization should be used, or interrupt should be defined as naked
+ *
  *	You can use two types of accessing buffers:
  *	- sample oriented or
  *	- multiple samples oriented.
@@ -21,8 +22,8 @@
 
 #include "AudioUtils.h"
 
-BiquadInstance filterL;
-BiquadInstance filterR;
+//BiquadInstance filterL;
+//BiquadInstance filterR;
 
 // actual
 
@@ -62,19 +63,19 @@ void SSIAudioCleanPlayBuffer( void);
 
 // defines
 
-//! Audio channels count
+// Audio channels count
 //#define SSIAUDIO_CHANNEL_COUNT	(8)
 
-//! Receive buffer size (in samples)
+// Receive buffer size (in samples)
 //#define SSIAUDIO_SAMPLEBUFFER_SIZE_RECEIVE (256)
 
-//! Transmit buffer size (in samples)
+// Transmit buffer size (in samples)
 //#define SSIAUDIO_SAMPLEBUFFER_SIZE_TRANSMIT (256)
 
-//! Transmit buffer threshold to transmit
+// Transmit buffer threshold to transmit
 //#define SSIAUDIO_TRANSMIT_THRESHOLD			(128)
 
-//! There are possible modes of operation
+// There are possible modes of operation
 /*enum SSIAudioMode
 {
 	SSIAUDIOMODE_24bit = 1, //< 24bit sample mode
@@ -83,21 +84,20 @@ void SSIAudioCleanPlayBuffer( void);
 
 // declarations
 
-//! Receive buffer definition - global variable
+// Receive buffer definition - global variable
 
 
 //! Transmit buffer definition - global variable
 //uint8_t SSIAUdioTrBuff[(SSIAUDIO_SAMPLEBUFFER_SIZE_TRANSMIT*SSIAUDIO_CHANNEL_COUNT*3)];
 
-//! Transmit buffer index
+// Transmit buffer index
 //uint16_t TransmitIndex;
 
 
 // public functions
 
 
-/*! \brief SSIAudio module initialization function
- * 	\ingroup SSIAUdio
+/*! SSIAudio module initialization function
  * 	\param mode parameter that one of the two mode of operation
  *
  *	example usage:
@@ -117,7 +117,6 @@ void SSIAudioCleanPlayBuffer( void);
 //void SSIAudioSetMode( enum SSIAudioMode mode);
 
 /*! \brief This funcion returns number of samples in transmit buffer
- * 	\ingroup SSIAUdio
  *
  * 	\return number of samples in transmit FIFO buffer
  *
@@ -125,7 +124,6 @@ void SSIAudioCleanPlayBuffer( void);
 //inline uint16_t SSIAudioTransmitSamplesInBuffer( void);
 
 /*! \brief This function returns continuous space in transmit FIFO buffer that could be written
- * 	\ingroup SSIAUdio
  *
  *	Example usage \ref SSIAudioTransmitAckNewData.
  *
@@ -135,7 +133,6 @@ void SSIAudioCleanPlayBuffer( void);
 
 
 /*! \brief This function updates transmit index according to written data count
- * 	\ingroup SSIAUdio
  *	\param bytesWritten written bytes count
  *
  *	Example usage:
@@ -153,5 +150,5 @@ void SSIAudioCleanPlayBuffer( void);
  * */
 //void SSIAudioTransmitAckNewData( uint16_t bytesWritten);
 
-
+/*! @}*/
 #endif//__SSIAUDIO_H__

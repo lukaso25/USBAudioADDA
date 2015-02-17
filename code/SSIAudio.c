@@ -1,6 +1,3 @@
-
-/* file brief */
-
 #include "SSIAudio.h"
 
 #include "inc/hw_memmap.h"
