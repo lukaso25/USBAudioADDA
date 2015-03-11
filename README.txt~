@@ -3,6 +3,4 @@ USB Audio ADDA Async
 
 This repository contains resources of USB audio interface based on TI microcontroller and Analog devices AD and DA converters. This interface use UAC 1 USB audio specifications, asynchronous clocking scheme. Interface is 24 b/ 96(88.2) kHz  capable in half-duplex mode and 24b / 44.1(48) kHz in full-duplex. 
 
-
-
 Only 2 SW modules are relased yet because of unfriendly licencing of USB example code.
