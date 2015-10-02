@@ -6,3 +6,5 @@ This repository contains resources of USB audio interface based on TI microcontr
 
 
 Only 2 SW modules are relased yet because of unfriendly licencing of USB example code.
+
+Link to pcb photo https://raw.githubusercontent.com/lukaso25/USBAudioADDA/master/photo%20prototype/03%20bottom.JPG
